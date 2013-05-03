@@ -31,8 +31,8 @@
 
     // Collapse and expand the relevent element 
     function doCollapse(event) {
-        event.preventDefault();
-        var evTarget = (event.currentTarget) ? event.currentTarget : event.srcElement;
+        event = event || window.event;
+        var evTarget = event.currentTarget || event.srcElement;
         var dataTarget = evTarget.getAttribute('data-target');
         var target = document.querySelector(dataTarget);
         var targetHeight = getHiddenHeight(target);
@@ -46,12 +46,13 @@
             target.className += ' in ';
             target.style.height = targetHeight + 'px';
         }
+        return false;
     }
 
     // Show a dropdown menu
     function doDropdown(event) {
-        event.preventDefault();
-        var evTarget = (event.currentTarget) ? event.currentTarget : event.srcElement;
+        event = event || window.event;
+        var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
         var className = (' ' + target.className + ' ');
         
@@ -61,14 +62,17 @@
         } else {
             target.className += ' open ';
         }
+        return false;
     }
 
     // Close an alert box by removing it from the DOM
     function closeAlert(event) {
-        event.preventDefault();
-        var alertBox = event.currentTarget.parentElement;
+        event = event || window.event;
+        var evTarget = event.currentTarget || event.srcElement;
+        var alertBox = evTarget.parentElement;
         
         alertBox.parentElement.removeChild(alertBox);
+        return false;
     }
     
     // Set event listeners for collapsible menus
