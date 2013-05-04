@@ -1,4 +1,10 @@
-(function() {
+/*!
+ * Bootstrap without jQuery v0.2
+ * By Daniel Davis under MIT License
+ * https://github.com/tagawa/bootstrap-without-jquery
+ */
+
+;(function() {
     'use strict';
 
     // querySelectorAll support for older IE
