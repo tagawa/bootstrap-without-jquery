@@ -23,10 +23,10 @@ So far tested in the following browsers:
 ### Works
 
 - Chrome 26
-- Chrome for Android 4.1
+- Android 4.1
 - Firefox 20
 - Firefox Mobile 20
-- Internet Explorer 8 & 10
+- Internet Explorer 8, 9 & 10
 - Kindle 3
 - Opera 12.15
 - Opera Mini 7.5
