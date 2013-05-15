@@ -1,5 +1,5 @@
 /*!
- * Bootstrap without jQuery v0.2
+ * Bootstrap without jQuery v0.3
  * By Daniel Davis under MIT License
  * https://github.com/tagawa/bootstrap-without-jquery
  */
@@ -70,6 +70,16 @@
         }
         return false;
     }
+    
+    // Close a dropdown menu
+    function closeDropdown(event) {
+        event = event || window.event;
+        var evTarget = event.currentTarget || event.srcElement;
+        var target = evTarget.parentElement;
+        
+        target.className = (' ' + target.className + ' ').replace(' open ', ' ');
+        return false;
+    }
 
     // Close an alert box by removing it from the DOM
     function closeAlert(event) {
@@ -91,6 +101,7 @@
     var dropdowns = document.querySelectorAll('[data-toggle=dropdown]');
     for (var i = 0, len = dropdowns.length; i < len; i++) {
         dropdowns[i].onclick = doDropdown;
+        dropdowns[i].onblur = doDropdown;
     }
 
     // Set event listeners for alert boxes
