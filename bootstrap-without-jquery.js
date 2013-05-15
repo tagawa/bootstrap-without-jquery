@@ -101,7 +101,7 @@
     var dropdowns = document.querySelectorAll('[data-toggle=dropdown]');
     for (var i = 0, len = dropdowns.length; i < len; i++) {
         dropdowns[i].onclick = doDropdown;
-        dropdowns[i].onblur = doDropdown;
+        dropdowns[i].onblur = closeDropdown;
     }
 
     // Set event listeners for alert boxes
