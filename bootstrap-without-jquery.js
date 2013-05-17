@@ -42,16 +42,16 @@
         var dataTarget = evTarget.getAttribute('data-target');
         var target = document.querySelector(dataTarget);
         var targetHeight = getHiddenHeight(target);
-        var className = (' ' + target.className + ' ');
+        var className = target.className;
 
-        if (className.indexOf(' ' + 'in' + ' ') > -1) {
+        if (className.indexOf('in') > -1) {
             // Hide the element
-            className = className.replace(' in ', ' ');
+            className = className.replace('in', '');
             target.className = className;
             target.style.height = '0';
         } else {
             // Show the element
-            target.className += ' in ';
+            target.className += ' in';
             target.style.height = targetHeight + 'px';
         }
         return false;
