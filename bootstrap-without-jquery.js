@@ -42,16 +42,14 @@
         var dataTarget = evTarget.getAttribute('data-target');
         var target = document.querySelector(dataTarget);
         var targetHeight = getHiddenHeight(target);
-        var className = (' ' + target.className + ' ');
 
-        if (className.indexOf(' ' + 'in' + ' ') > -1) {
+        if (target.className.indexOf('in') > -1) {
             // Hide the element
-            className = className.replace(' in ', ' ');
-            target.className = className;
+            target.className = target.className.replace('in', '').trim();
             target.style.height = '0';
         } else {
             // Show the element
-            target.className += ' in ';
+            target.className += ' in';
             target.style.height = targetHeight + 'px';
         }
         return false;
@@ -62,15 +60,13 @@
         event = event || window.event;
         var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
-        var className = (' ' + target.className + ' ');
-        
-        if (className.indexOf(' ' + 'open' + ' ') > -1) {
+         
+        if (target.className.indexOf('open') > -1) {
             // Hide the menu
-            className = className.replace(' open ', ' ');
-            target.className = className;
+            target.className = target.className.replace('open', '').trim();
         } else {
             // Show the menu
-            target.className += ' open ';
+            target.className += ' open';
         }
         return false;
     }
@@ -81,7 +77,7 @@
         var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
         
-        target.className = (' ' + target.className + ' ').replace(' open ', ' ');
+        target.className = target.className.replace('open', '').trim();
         return false;
     }
 
