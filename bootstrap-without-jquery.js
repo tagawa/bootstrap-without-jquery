@@ -1,5 +1,5 @@
 /*!
- * Bootstrap without jQuery v0.3
+ * Bootstrap without jQuery v0.3.1
  * By Daniel Davis under MIT License
  * https://github.com/tagawa/bootstrap-without-jquery
  */
@@ -45,10 +45,12 @@
         var className = (' ' + target.className + ' ');
 
         if (className.indexOf(' ' + 'in' + ' ') > -1) {
+            // Hide the element
             className = className.replace(' in ', ' ');
             target.className = className;
             target.style.height = '0';
         } else {
+            // Show the element
             target.className += ' in ';
             target.style.height = targetHeight + 'px';
         }
@@ -63,9 +65,11 @@
         var className = (' ' + target.className + ' ');
         
         if (className.indexOf(' ' + 'open' + ' ') > -1) {
+            // Hide the menu
             className = className.replace(' open ', ' ');
             target.className = className;
         } else {
+            // Show the menu
             target.className += ' open ';
         }
         return false;
@@ -99,9 +103,11 @@
 
     // Set event listeners for dropdown menus
     var dropdowns = document.querySelectorAll('[data-toggle=dropdown]');
-    for (var i = 0, len = dropdowns.length; i < len; i++) {
-        dropdowns[i].onclick = doDropdown;
-        dropdowns[i].onblur = closeDropdown;
+    for (var i = 0, dropdown, len = dropdowns.length; i < len; i++) {
+        dropdown = dropdowns[i];
+        dropdown.setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome
+        dropdown.onclick = doDropdown;
+        dropdown.onblur = closeDropdown;
     }
 
     // Set event listeners for alert boxes
