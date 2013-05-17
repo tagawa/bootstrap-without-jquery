@@ -60,8 +60,7 @@
         event = event || window.event;
         var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
-        var className = target.className;
-        
+         
         if (target.className.indexOf('open') > -1) {
             // Hide the menu
             target.className = target.className.replace('open', '');
