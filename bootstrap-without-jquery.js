@@ -62,15 +62,15 @@
         event = event || window.event;
         var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
-        var className = (' ' + target.className + ' ');
+        var className = target.className;
         
-        if (className.indexOf(' ' + 'open' + ' ') > -1) {
+        if (className.indexOf('open') > -1) {
             // Hide the menu
-            className = className.replace(' open ', ' ');
+            className = className.replace('open', '');
             target.className = className;
         } else {
             // Show the menu
-            target.className += ' open ';
+            target.className += ' open';
         }
         return false;
     }
@@ -81,7 +81,7 @@
         var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
         
-        target.className = (' ' + target.className + ' ').replace(' open ', ' ');
+        target.className = target.className.replace('open', '');
         return false;
     }
 
