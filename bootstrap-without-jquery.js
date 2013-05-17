@@ -42,12 +42,10 @@
         var dataTarget = evTarget.getAttribute('data-target');
         var target = document.querySelector(dataTarget);
         var targetHeight = getHiddenHeight(target);
-        var className = target.className;
 
-        if (className.indexOf('in') > -1) {
+        if (target.className.indexOf('in') > -1) {
             // Hide the element
-            className = className.replace('in', '');
-            target.className = className;
+            target.className = target.className.replace('in', '');
             target.style.height = '0';
         } else {
             // Show the element
@@ -64,10 +62,9 @@
         var target = evTarget.parentElement;
         var className = target.className;
         
-        if (className.indexOf('open') > -1) {
+        if (target.className.indexOf('open') > -1) {
             // Hide the menu
-            className = className.replace('open', '');
-            target.className = className;
+            target.className = target.className.replace('open', '');
         } else {
             // Show the menu
             target.className += ' open';
