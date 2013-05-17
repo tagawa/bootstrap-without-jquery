@@ -22,6 +22,7 @@ So far tested in the following browsers:
 
 ### Works
 
+- Android 2.3
 - Android 4.1
 - Chrome 26
 - Firefox 20
@@ -33,14 +34,15 @@ So far tested in the following browsers:
 - Opera Mini 7.5
 - Opera Mobile 12.10
 
-### Partially works
-
-- Android 2.3 (alert close is intermittent)
-
 ### Doesn't work
 
 - Nintendo DS/DSi
 - Nintendo Wii
+
+### Notes
+
+- Alert close is intermittent in Android 2.3
+- In Chrome, `onblur` doesn't fire when attached to `button` elements. This affects the dropdown menus so please use `a` elements instead for these.
 
 I'd really appreciate a quick comment on whether it works in your browser or not.
 
