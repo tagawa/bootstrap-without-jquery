@@ -82,6 +82,11 @@
         var target = evTarget.parentElement;
         
         target.className = (' ' + target.className + ' ').replace(' open ', ' ');
+        
+        // Trigger the click event on the target after closing the menu
+        if(event.relatedTarget)
+            event.relatedTarget.click();
+        
         return false;
     }
 
