@@ -45,7 +45,7 @@
 
         if (target.className.indexOf('in') > -1) {
             // Hide the element
-            target.className = target.className.replace('in', '');
+            target.className = target.className.replace('in', '').trim();
             target.style.height = '0';
         } else {
             // Show the element
@@ -63,7 +63,7 @@
          
         if (target.className.indexOf('open') > -1) {
             // Hide the menu
-            target.className = target.className.replace('open', '');
+            target.className = target.className.replace('open', '').trim();
         } else {
             // Show the menu
             target.className += ' open';
@@ -77,7 +77,7 @@
         var evTarget = event.currentTarget || event.srcElement;
         var target = evTarget.parentElement;
         
-        target.className = target.className.replace('open', '');
+        target.className = target.className.replace('open', '').trim();
         return false;
     }
 
