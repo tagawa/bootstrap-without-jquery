@@ -82,6 +82,13 @@
         var target = evTarget.parentElement;
         
         target.className = (' ' + target.className + ' ').replace(' open ', ' ');
+        
+        // Trigger the click event on the target if it not opening another menu
+        if(event.relatedTarget) {
+            if(event.relatedTarget.getAttribute('data-toggle') != 'dropdown'){
+                event.relatedTarget.click();
+            }
+        }
         return false;
     }
 
