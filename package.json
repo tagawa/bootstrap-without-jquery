@@ -1,0 +1,30 @@
+{
+  "name": "bootstrap-without-jquery",
+  "version": "0.3.1",
+  "description": "Lightweight script to replace jQuery for simple interactions when using Twitter Bootstrap.",
+  "main": "bootstrap-without-jquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tagawa/bootstrap-without-jquery.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "jquery"
+  ],
+  "author": "Daniel Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tagawa/bootstrap-without-jquery/issues"
+  },
+  "homepage": "https://github.com/tagawa/bootstrap-without-jquery",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "1.x",
+    "grunt": "^0.4.0",
+    "grunt-contrib-jshint": "^0.6.0",
+    "grunt-contrib-uglify": "^0.1.1"
+  }
+}
