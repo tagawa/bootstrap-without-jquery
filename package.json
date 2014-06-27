@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-without-jquery",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Lightweight script to replace jQuery for simple interactions when using Twitter Bootstrap.",
   "main": "bootstrap-without-jquery.js",
   "scripts": {

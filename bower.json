@@ -1,7 +1,7 @@
 {
   "name": "Bootstrap without jQuery",
   "main": "bootstrap-without-jquery.js",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "homepage": "https://github.com/tagawa/bootstrap-without-jquery",
   "authors": [
     "Daniel Davis"

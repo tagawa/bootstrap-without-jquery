@@ -1,10 +1,10 @@
 /*!
- * Bootstrap without jQuery v0.3.1
+ * Bootstrap without jQuery v0.3.2
  * By Daniel Davis under MIT License
  * https://github.com/tagawa/bootstrap-without-jquery
  */
 
-;(function() {
+(function() {
     'use strict';
 
     // querySelectorAll support for older IE
@@ -30,7 +30,7 @@
         var height = 0;
         for (var i = 0, len = children.length, child; i < len; i++) {
             child = children[i];
-            height += Math.max(child['clientHeight'], child['offsetHeight'], child['scrollHeight']);
+            height += Math.max(child.clientHeight, child.offsetHeight, child.scrollHeight);
         }
         return height;
     }
@@ -85,7 +85,7 @@
         
         // Trigger the click event on the target if it not opening another menu
         if(event.relatedTarget) {
-            if(event.relatedTarget.getAttribute('data-toggle') != 'dropdown'){
+            if(event.relatedTarget.getAttribute('data-toggle') !== 'dropdown'){
                 event.relatedTarget.click();
             }
         }
@@ -104,14 +104,14 @@
     
     // Set event listeners for collapsible menus
     var collapsibles = document.querySelectorAll('[data-toggle=collapse]');
-    for (var i = 0, len = collapsibles.length; i < len; i++) {
+    for (var i = 0, leni = collapsibles.length; i < leni; i++) {
         collapsibles[i].onclick = doCollapse;
     }
 
     // Set event listeners for dropdown menus
     var dropdowns = document.querySelectorAll('[data-toggle=dropdown]');
-    for (var i = 0, dropdown, len = dropdowns.length; i < len; i++) {
-        dropdown = dropdowns[i];
+    for (var j = 0, dropdown, lenj = dropdowns.length; j < lenj; j++) {
+        dropdown = dropdowns[j];
         dropdown.setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome
         dropdown.onclick = doDropdown;
         dropdown.onblur = closeDropdown;
@@ -119,8 +119,8 @@
 
     // Set event listeners for alert boxes
     var alerts = document.querySelectorAll('[data-dismiss=alert]');
-    for (var i = 0, len = alerts.length; i < len; i++) {
-        alerts[i].onclick = closeAlert;
+    for (var k = 0, lenk = alerts.length; k < lenk; k++) {
+        alerts[k].onclick = closeAlert;
     }
 
 })();
