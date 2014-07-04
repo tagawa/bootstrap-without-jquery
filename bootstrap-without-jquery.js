@@ -44,7 +44,7 @@
         var targetHeight = getHiddenHeight(target);
         var className = (' ' + target.className + ' ');
 
-        if (className.indexOf(' ' + 'in' + ' ') > -1) {
+        if (className.indexOf(' in ') > -1) {
             // Hide the element
             className = className.replace(' in ', ' ');
             target.className = className;
@@ -64,7 +64,7 @@
         var target = evTarget.parentElement;
         var className = (' ' + target.className + ' ');
         
-        if (className.indexOf(' ' + 'open' + ' ') > -1) {
+        if (className.indexOf(' open ') > -1) {
             // Hide the menu
             className = className.replace(' open ', ' ');
             target.className = className;
