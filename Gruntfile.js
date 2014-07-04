@@ -3,11 +3,6 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*!\n' +
-            ' * Bootstrap without jQuery v<%= pkg.version %>\n' +
-            ' * By <%= pkg.author %> under <%= pkg.license %> License\n' +
-            ' <%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-            ' */\n',
         jshint: {
             options: {
                 browser: true,
@@ -20,25 +15,38 @@ module.exports = function(grunt) {
                 undef: true,
                 unused: true
             },
-            all: ['bower.json', 'package.json', 'bootstrap2/bootstrap-without-jquery.js']
+            all: ['bower.json', 'package.json', 'bootstrap2/bootstrap-without-jquery.js', 'bootstrap3/bootstrap-without-jquery.js']
+        },
+        concat: {
+            options: {
+                separator: '\n;\n'
+            },
+            b3: {
+                src: ['lib/classList.js', 'bootstrap3/<%= pkg.name %>.js'],
+                dest: 'tmp/<%= pkg.name %>.js'
+            }
         },
         uglify: {
             options: {
-                banner: '<%= banner %>',
+                preserveComments: 'some',
                 report: 'gzip'
             },
             b2: {
                 src: 'bootstrap2/<%= pkg.name %>.js',
                 dest: 'bootstrap2/<%= pkg.name %>.min.js'
+            },
+            b3: {
+                src: 'tmp/<%= pkg.name %>.js',
+                dest: 'bootstrap3/<%= pkg.name %>.min.js'
             }
         },
     });
     
-    //grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
 };
 
 
