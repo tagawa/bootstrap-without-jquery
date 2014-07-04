@@ -1,5 +1,5 @@
 /*!
- * Bootstrap without jQuery v0.3.3
+ * Bootstrap without jQuery v0.3.3 for Bootstrap 2
  * By Daniel Davis under MIT License
  * https://github.com/tagawa/bootstrap-without-jquery
  */

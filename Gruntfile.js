@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                 banner: '<%= banner %>',
                 report: 'gzip'
             },
-            dist: {
+            b2: {
                 src: 'bootstrap2/<%= pkg.name %>.js',
                 dest: 'bootstrap2/<%= pkg.name %>.min.js'
             }
