@@ -7,9 +7,11 @@ A lightweight script to replace jQuery for simple interactions when using [Twitt
 
 Bootstrap, as of version 2, requires jQuery for some components such as dropdowns, alerts and the little "hamburger" icon that triggers a collapsible menu. While jQuery is an excellent cross-browser framework, it can be overkill if it's only used for displaying and hiding things. Of course, if a project already uses jQuery then there's no problem, but if not here's a script to replace jQuery and some of the Bootstrap plugin scripts. Using this should reduce download size and speed up loading time for your users.
 
+Note that this currently only works in Bootstrap version 2. I'm working on an update for Bootstrap 3.
+
 ## Demo
 
-You can see the script in action in this simple demo page: [daniemon.com/demos/bootstrap/](http://daniemon.com/demos/bootstrap/)
+You can see the script in action in this simple [demo page](https://tagawa.github.io/bootstrap-without-jquery/bootstrap2/demo/).
 
 ## Dependencies
 
