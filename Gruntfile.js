@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 undef: true,
                 unused: true
             },
-            all: ['bower.json', 'package.json', 'bootstrap-without-jquery.js']
+            all: ['bower.json', 'package.json', 'bootstrap2/bootstrap-without-jquery.js']
         },
         uglify: {
             options: {
@@ -28,8 +28,8 @@ module.exports = function(grunt) {
                 report: 'gzip'
             },
             dist: {
-                src: '<%= pkg.name %>.js',
-                dest: '<%= pkg.name %>.min.js'
+                src: 'bootstrap2/<%= pkg.name %>.js',
+                dest: 'bootstrap2/<%= pkg.name %>.min.js'
             }
         },
     });
