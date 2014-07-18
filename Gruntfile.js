@@ -6,14 +6,18 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 browser: true,
+                camelcase: true,
                 curly: true,
                 eqeqeq: true,
                 immed: true,
                 latedef: true,
                 newcap: true,
                 noarg: true,
+                noempty: true,
+                quotmark: true,
                 undef: true,
-                unused: true
+                unused: true,
+                expr: true
             },
             all: ['bower.json', 'package.json', 'bootstrap2/bootstrap-without-jquery.js', 'bootstrap3/bootstrap-without-jquery.js']
         },
