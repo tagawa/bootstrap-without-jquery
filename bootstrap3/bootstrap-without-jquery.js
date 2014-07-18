@@ -1,5 +1,5 @@
 /*!
- * Bootstrap without jQuery v0.4 for Bootstrap 3
+ * Bootstrap without jQuery v0.4.1 for Bootstrap 3
  * By Daniel Davis under MIT License
  * https://github.com/tagawa/bootstrap-without-jquery
  */
@@ -12,7 +12,7 @@
      */
      
     // transitionend - source: https://stackoverflow.com/questions/5023514/how-do-i-normalize-css3-transition-functions-across-browsers#answer-9090128
-    function transitionEndEventName () {
+    function transitionEndEventName() {
         var i,
             el = document.createElement('div'),
             transitions = {
@@ -32,16 +32,15 @@
     }
     var transitionend = transitionEndEventName();
     
-
-    // Get the height of an element, even when collapsed
-    function getHeight(element) {
-        var children = element.children;
-        var height = 0;
-        for (var i = 0, len = children.length, child; i < len; i++) {
-            child = children[i];
-            height += Math.max(child.clientHeight, child.offsetHeight, child.scrollHeight);
-        }
-        return height;
+    // Get the potential max height of an element
+    function getMaxHeight(element) {
+        // Source: http://n12v.com/css-transition-to-from-auto/
+        var prevHeight = element.style.height;
+        element.style.height = 'auto';
+        var maxHeight = getComputedStyle(element).height;
+        element.style.height = prevHeight;
+        element.offsetHeight; // force repaint
+        return maxHeight;
     }
     
     /*
@@ -58,9 +57,8 @@
         element.classList.remove('collapse');
         element.classList.add('collapsing');
         
-        // Get hidden height of child elements
-        var height = getHeight(element);
-        element.style.height = height + 'px';
+        // Set element's height to its maximum height
+        element.style.height = getMaxHeight(element);
         
         // Call the complete() function after the transition has finished
         if (transitionend) {
@@ -79,7 +77,9 @@
         element.classList.remove('in');
         element.classList.add('collapsing');
         
-        // Reset height of child elements
+        // Reset element's height
+        element.style.height = getComputedStyle(element).height;
+        element.offsetHeight; // force repaint
         element.style.height = '0px';
     }
     
@@ -91,6 +91,7 @@
         // Check whether the element is unhidden
         if (element.style.height !== '0px') {
             element.classList.add('in');
+            element.style.height = 'auto';
         }
     }
 
