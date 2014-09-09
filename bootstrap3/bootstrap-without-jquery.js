@@ -56,6 +56,7 @@
     function show(element) {
         element.classList.remove('collapse');
         element.classList.add('collapsing');
+        element.setAttribute('aria-expanded', true);
         
         // Set element's height to its maximum height
         element.style.height = getMaxHeight(element);
@@ -76,6 +77,7 @@
         element.classList.remove('collapse');
         element.classList.remove('in');
         element.classList.add('collapsing');
+        element.setAttribute('aria-expanded', false);
         
         // Reset element's height
         element.style.height = getComputedStyle(element).height;
@@ -87,6 +89,7 @@
     function complete(element) {
         element.classList.remove('collapsing');
         element.classList.add('collapse');
+        element.setAttribute('aria-expanded', false);
         
         // Check whether the element is unhidden
         if (element.style.height !== '0px') {
