@@ -53,10 +53,11 @@
      */
      
     // Show a target element
-    function show(element) {
+    function show(element, trigger) {
         element.classList.remove('collapse');
         element.classList.add('collapsing');
-        element.setAttribute('aria-expanded', true);
+        trigger.classList.remove('collapsed');
+        trigger.setAttribute('aria-expanded', true);
         
         // Set element's height to its maximum height
         element.style.height = getMaxHeight(element);
@@ -73,11 +74,12 @@
     }
     
     // Hide a target element
-    function hide(element) {
+    function hide(element, trigger) {
         element.classList.remove('collapse');
         element.classList.remove('in');
         element.classList.add('collapsing');
-        element.setAttribute('aria-expanded', false);
+        trigger.classList.add('collapsed');
+        trigger.setAttribute('aria-expanded', false);
         
         // Reset element's height
         element.style.height = getComputedStyle(element).height;
@@ -108,9 +110,9 @@
         
         // Add the "in" class name when elements are unhidden
         if (target.classList.contains('in')) {
-            hide(target);
+            hide(target, evTarget);
         } else {
-            show(target);
+            show(target, evTarget);
         }
         return false;
     }
