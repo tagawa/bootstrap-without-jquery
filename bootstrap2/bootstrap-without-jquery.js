@@ -49,12 +49,12 @@
             className = className.replace(' in ', ' ');
             target.className = className;
             target.style.height = '0';
-            target.setAttribute('aria-expanded', false);
+            evTarget.setAttribute('aria-expanded', false);
         } else {
             // Show the element
             target.className += ' in ';
             target.style.height = targetHeight + 'px';
-            target.setAttribute('aria-expanded', true);
+            evTarget.setAttribute('aria-expanded', true);
         }
         return false;
     }
