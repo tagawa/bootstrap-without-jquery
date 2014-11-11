@@ -1,5 +1,5 @@
 {
-  "name": "Bootstrap without jQuery",
+  "name": "bootstrap-without-jquery",
   "main": "bootstrap2/bootstrap-without-jquery.js",
   "version": "0.3.3",
   "homepage": "https://github.com/tagawa/bootstrap-without-jquery",
