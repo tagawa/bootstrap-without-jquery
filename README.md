@@ -1,5 +1,4 @@
 #Bootstrap without jQuery
-========================
 
 ## Introduction
 
