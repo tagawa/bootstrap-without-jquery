@@ -31,8 +31,7 @@ You can see the script in action in these simple demos:
 
 ## Browser support
 
-Bootstrap 2 version so far tested in the following browsers:
-(Bootstrap 3 version needs to be tested)
+Bootstrap 2 version so far tested in the following browsers. (Bootstrap 3 testing is on the todo list)
 
 ### Works
 
