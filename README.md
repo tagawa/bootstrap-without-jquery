@@ -26,7 +26,7 @@ You can see the script in action in these simple demos:
 
 ## Dependencies
 
-- Twitter Bootstrap
+- [Twitter Bootstrap](http://getbootstrap.com/)
 - JavaScript turned on - no other libraries required.
 
 ## Browser support
