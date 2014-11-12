@@ -1,5 +1,5 @@
 /*!
- * Bootstrap without jQuery v0.4.1 for Bootstrap 3
+ * Bootstrap without jQuery v0.4.2 for Bootstrap 3
  * By Daniel Davis under MIT License
  * https://github.com/tagawa/bootstrap-without-jquery
  */
@@ -31,6 +31,16 @@
         return false;
     }
     var transitionend = transitionEndEventName();
+    
+    // Get an event's target element and the element specified by the "data-target" attribute
+    function getTargets(event) {
+        var targets = {};
+        event = event || window.event;
+        targets.evTarget = event.currentTarget || event.srcElement;
+        var dataTarget = targets.evTarget.getAttribute('data-target');
+        targets.dataTarget = (dataTarget) ? document.querySelector(dataTarget) : false;
+        return targets;
+    }
     
     // Get the potential max height of an element
     function getMaxHeight(element) {
@@ -102,24 +112,22 @@
 
     // Start the collapse action on the chosen element
     function doCollapse(event) {
-        // Get target element from data-target attribute
-        event = event || window.event;
-        var evTarget = event.currentTarget || event.srcElement;
-        var dataTarget = evTarget.getAttribute('data-target');
-        var target = document.querySelector(dataTarget);
+        event.preventDefault();
+        var targets = getTargets(event);
+        var dataTarget = targets.dataTarget;
         
         // Add the "in" class name when elements are unhidden
-        if (target.classList.contains('in')) {
-            hide(target, evTarget);
+        if (dataTarget.classList.contains('in')) {
+            hide(dataTarget, targets.evTarget);
         } else {
-            show(target, evTarget);
+            show(dataTarget, targets.evTarget);
         }
         return false;
     }
     
     // Get all elements that are collapse triggers and add click event listeners
-    var collapsibles = document.querySelectorAll('[data-toggle=collapse]');
-    for (var i = 0, leni = collapsibles.length; i < leni; i++) {
-        collapsibles[i].onclick = doCollapse;
+    var collapsibleList = document.querySelectorAll('[data-toggle=collapse]');
+    for (var i = 0, leni = collapsibleList.length; i < leni; i++) {
+        collapsibleList[i].onclick = doCollapse;
     }
 })();
