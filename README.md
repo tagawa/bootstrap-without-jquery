@@ -8,11 +8,7 @@ Bootstrap requires jQuery for some components such as dropdowns, alerts and the 
 
 ## Coverage
 
-### Bootstrap 3
-- Collapsible elements (e.g. "hamburger" menu icon)
-- Dismissable alert boxes
-
-### Bootstrap 2
+### Bootstrap 2 and 3
 - Collapsible elements (e.g. "hamburger" menu icon)
 - Dismissable alert boxes
 - Dropdown menus
