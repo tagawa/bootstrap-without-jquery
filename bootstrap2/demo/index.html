@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo: Bootstrap without jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A script to remove the need for jQuery in the Twitter Bootstrap framework in certain situations. This should improve page load speed for users.">
+    <meta name="author" content="Daniel Davis">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .hero-unit h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+      footer img {
+          height: 24px;
+          vertical-align: middle;
+          width: 24px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="brand">Try the menu button →</p>
+          <div id="navbar" class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Bootstrap without jQuery</h1>
+        <p>This is a demo page for testing <a href="https://github.com/tagawa/bootstrap-without-jquery">Bootstrap without jQuery</a>, which is a script to remove the need for jQuery in the <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap framework (version 2)</a> in certain situations. If you're just using the Bootstrap jQuery plugins for hiding and displaying elements, give this a try &mdash; it should improve page load speed for users.</p>
+        <p><a href="https://github.com/tagawa/bootstrap-without-jquery" class="btn btn-primary btn-large">Get script &raquo;</a></p>
+      </div><!--/hero-unit-->
+  
+      <h2>Alert boxes</h2>
+    
+      <div class="row-fluid">
+        <div class="alert alert-info span6">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Alert!</strong> This is an alert box. You should be able to close it.
+        </div>
+
+        <div class="alert alert-block alert-error span6">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>Alert!</h4>
+          This is a block-style alert box. Like the other one, you should be able to close it.
+        </div>
+      </div><!--/row-->
+      
+      <h2>Dropdown menus</h2>
+      
+      <div class="row-fluid">
+        <p>Clicking the dropdown/dropup buttons below should show/hide submenus.</p>
+        
+        <div class="btn-toolbar">
+          <div class="btn-group">
+            <a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#">
+              Large dropdown button
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+              <li><a tabindex="-1" href="#">Action</a></li>
+              <li><a tabindex="-1" href="#">Another action</a></li>
+              <li><a tabindex="-1" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="btn-toolbar">
+          <div class="btn-group dropup">
+            <button class="btn">Split dropup button</button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+              <li><a tabindex="-1" href="#">Action</a></li>
+              <li><a tabindex="-1" href="#">Another action</a></li>
+              <li><a tabindex="-1" href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!--/row-->
+      
+      <hr>
+
+      <footer class="pull-right">
+        <p>Made by <a href="https://twitter.com/ourmaninjapan" rel="author">Daniel Davis <img src="//pbs.twimg.com/profile_images/948287974/daddy_bigger.jpg" alt="Avatar for ourmaninjapan" style="height:36px;width:36px;border-radius:4px;"></a></p>
+      </footer>
+
+    </div><!--/.container-->
+
+    <script src="../bootstrap-without-jquery.min.js"></script>
+  </body>
+</html>
