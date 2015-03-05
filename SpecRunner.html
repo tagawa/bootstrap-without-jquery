@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jasmine Spec Runner v2.2.0</title>
+
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.2.0/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.2.0/jasmine.css">
+    <link rel="stylesheet" href="bootstrap3/demo/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bootstrap without jQuery: Tests</h1>
+        
+        <h2>Collapsible menus</h2>
+
+        <div class="navbar navbar-inverse">
+            <button type="button" class="navbar-toggle collapsed" style="display:block;" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <p class="brand">Try the menu button →</p>
+            <div id="navbar" class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Alerts</h2>
+        
+        <div class="alert alert-warning fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            This alert box should close.
+        </div>
+        <div class="alert alert-success fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            This alert box should stay visible.
+        </div>
+
+        <h2>Dropdown lists</h2>
+        
+        <div class="dropdown clearfix">
+            <a id="dropdownMenu1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu open" role="menu" aria-labelledby="dropdownMenu1">
+                <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+
+    <script src="lib/jasmine-2.2.0/jasmine.js"></script>
+    <script src="lib/jasmine-2.2.0/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.2.0/boot.js"></script>
+
+    <!-- include source files here... -->
+    <script src="bootstrap3/bootstrap-without-jquery.min.js"></script>
+
+    <!-- include spec files here... -->
+    <script src="spec/bootstrap3_spec.js"></script>
+</body>
+</html>
