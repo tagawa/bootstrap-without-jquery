@@ -238,6 +238,6 @@
         dropdown = dropdownList[k];
         dropdown.setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome
         dropdown.onclick = doDropdown;
-        dropdown.onblur = closeDropdown;
+        dropdown.onblur = setTimeout(closeDropdown,250); // Fix to make onblur work in Safari and FF.
     }
 })();
