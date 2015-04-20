@@ -222,12 +222,18 @@
     // Close a dropdown menu
     function closeDropdown(event) {
         event = event || window.event;
-        var evTarget = event.currentTarget || event.srcElement;
+        var evTarget = event.currentTarget || event.srcElement,
+			relatedTarget = event.relatedTarget || event.explicitOriginalTarget;
         evTarget.parentElement.classList.remove('open');
         
+		// If target is a textNode, use its parentNode
+        if (relatedTarget.nodeType===3)	{
+			relatedTarget=relatedTarget.parentNode;
+		}
+		
         // Trigger the click event on the target if it not opening another menu
-        if(event.relatedTarget && event.relatedTarget.getAttribute('data-toggle') !== 'dropdown') {
-            event.relatedTarget.click();
+        if(relatedTarget && relatedTarget.getAttribute('data-toggle') !== 'dropdown') {
+            relatedTarget.click();
         }
         return false;
     }
