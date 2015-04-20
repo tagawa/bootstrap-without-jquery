@@ -223,14 +223,14 @@
     function closeDropdown(event) {
         event = event || window.event;
         var evTarget = event.currentTarget || event.srcElement,
-			relatedTarget = event.relatedTarget || event.explicitOriginalTarget;
+            relatedTarget = event.relatedTarget || event.explicitOriginalTarget;
         evTarget.parentElement.classList.remove('open');
         
-		// If target is a textNode, use its parentNode
-        if (relatedTarget.nodeType===3)	{
-			relatedTarget=relatedTarget.parentNode;
-		}
-		
+        // If target is a textNode, use its parentNode
+        if (relatedTarget.nodeType===3)    {
+            relatedTarget=relatedTarget.parentNode;
+        }
+        
         // Trigger the click event on the target if it not opening another menu
         if(relatedTarget && relatedTarget.getAttribute('data-toggle') !== 'dropdown') {
             relatedTarget.click();
@@ -244,6 +244,10 @@
         dropdown = dropdownList[k];
         dropdown.setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome
         dropdown.onclick = doDropdown;
-        dropdown.onblur = closeDropdown;
+        if ('onfocusout' in document.body){
+            dropdown.onfocusout = closeDropdown;
+        }else{
+            dropdown.onblur = closeDropdown;
+        }
     }
 })();
