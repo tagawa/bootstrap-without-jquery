@@ -1,26 +1,32 @@
 #Bootstrap without jQuery
-========================
 
 ## Introduction
 
 A lightweight script to replace jQuery for simple interactions when using [Twitter Bootstrap](http://twitter.github.io/bootstrap/).
 
-Bootstrap, as of version 2, requires jQuery for some components such as dropdowns, alerts and the little "hamburger" icon that triggers a collapsible menu. While jQuery is an excellent cross-browser framework, it can be overkill if it's only used for displaying and hiding things. Of course, if a project already uses jQuery then there's no problem, but if not here's a script to replace jQuery and some of the Bootstrap plugin scripts. Using this should reduce download size and speed up loading time for your users.
+Bootstrap requires jQuery for some components such as dropdowns, alerts and the little "hamburger" icon that triggers a collapsible menu. While jQuery is an excellent cross-browser framework, it can be overkill if it's only used for displaying and hiding things. Of course, if a project already uses jQuery then there's no problem, but if not here's a script to replace jQuery and some of the Bootstrap plugin scripts. Using this should reduce download size and speed up loading time for your users.
 
-Note that this currently **only works in Bootstrap version 2**. I'm working on a version for Bootstrap 3, [viewable here](https://tagawa.github.io/bootstrap-without-jquery/bootstrap3/demo/), but it's only for collapsible elements and is untested.
+## Coverage
+
+### Bootstrap 2 and 3
+- Collapsible elements (e.g. "hamburger" menu icon)
+- Dismissable alert boxes
+- Dropdown menus
 
 ## Demo
 
-You can see the script in action in this simple [demo page](https://tagawa.github.io/bootstrap-without-jquery/bootstrap2/demo/).
+You can see the script in action in these simple demos:
+-  [Bootstrap 3 demo](https://tagawa.github.io/bootstrap-without-jquery/bootstrap3/demo/)
+-  [Bootstrap 2 demo](https://tagawa.github.io/bootstrap-without-jquery/bootstrap2/demo/)
 
 ## Dependencies
 
-- Twitter Bootstrap
+- [Twitter Bootstrap](http://getbootstrap.com/)
 - JavaScript turned on - no other libraries required.
 
 ## Browser support
 
-So far tested in the following browsers:
+Bootstrap 2 version so far tested in the following browsers. (Bootstrap 3 testing is on the todo list)
 
 ### Works
 
