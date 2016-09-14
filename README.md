@@ -1,5 +1,7 @@
 #Bootstrap without jQuery
 
+** **Note: This is no longer maintained.** For a more up-to-date version please take a look at [bootstrap.native](https://github.com/thednp/bootstrap.native)
+
 ## Introduction
 
 A lightweight script to replace jQuery for simple interactions when using [Twitter Bootstrap](http://twitter.github.io/bootstrap/).
