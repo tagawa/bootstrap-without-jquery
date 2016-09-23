@@ -179,7 +179,6 @@
                 target.parentNode.removeChild(target);
                 fireTrigger(target, 'closed.bs.alert');
             } catch(e) {
-                window.console.error('Unable to remove alert');
             }
         }
         
@@ -205,39 +204,48 @@
     
     /*
      * Dropdown action
+     * 
      * 1. Get list of all elements that are dropdown triggers
      * 2. Add click and blur event listeners to these elements
      * 3. When clicked, add "open" to the target element's class names, or remove if it exists
      * 4. On blur, remove "open" from the target element's class names
+     * 
+     * Note: As of Bootstrap 3, sub-menus aren't supported anymore, so this script
+     * doesn't support that either.
      */
      
     // Show a dropdown menu
     function doDropdown(event) {
         event = event || window.event;
-        var evTarget = event.currentTarget || event.srcElement;
-        evTarget.parentElement.classList.toggle('open');
+        (event.currentTarget || event.srcElement).parentElement.classList.toggle('open');
         return false;
     }
     
     // Close a dropdown menu
     function closeDropdown(event) {
         event = event || window.event;
-        var evTarget = event.currentTarget || event.srcElement;
-        evTarget.parentElement.classList.remove('open');
+        var dropdown = (event.currentTarget || event.srcElement).parentElement,
+			relatedTarget = event.relatedTarget || event.explicitOriginalTarget;
+        if (relatedTarget && relatedTarget.nodeType===3) {
+            relatedTarget=relatedTarget.parentNode;
+        }
         
-        // Trigger the click event on the target if it not opening another menu
-        if(event.relatedTarget && event.relatedTarget.getAttribute('data-toggle') !== 'dropdown') {
-            event.relatedTarget.click();
+        // Delay hiding, if it not opening another menu, to allow click-events to fire
+        if(relatedTarget && relatedTarget.getAttribute('data-toggle') === 'dropdown') {
+            dropdown.classList.remove('open'); // ... but keep switching between menus smooth
+        }else{
+            window.setTimeout(function(){dropdown.classList.remove('open');},200);
         }
         return false;
     }
     
     // Set event listeners for dropdown menus
     var dropdownList = document.querySelectorAll('[data-toggle=dropdown]');
-    for (var k = 0, dropdown, lenk = dropdownList.length; k < lenk; k++) {
-        dropdown = dropdownList[k];
-        dropdown.setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome
-        dropdown.onclick = doDropdown;
-        dropdown.onblur = closeDropdown;
+    for (var k = 0, lenk = dropdownList.length; k < lenk; k++) {
+        if (!dropdownList[k].getAttribute('tabindex')) {
+            dropdownList[k].setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome 
+        }
+        dropdownList[k].onclick = doDropdown;
+        dropdownList[k].onblur = closeDropdown;
     }
 })();
